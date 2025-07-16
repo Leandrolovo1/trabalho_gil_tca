@@ -1,0 +1,71 @@
+/* src/App.css */
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* --- */
+/* PERSONALIZAÇÃO DOS LINKS DA NAVBAR (Adicione a partir daqui) */
+/* --- */
+
+/* Estilo base para todos os links da navbar (incluindo o 'active' e 'focus' quando não em hover) */
+/* Isso garante que todos os links comecem com a mesma cor padrão e sobrescreve o padrão 'active' do Bootstrap */
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.75); /* Branco com 75% opacidade */
+    transition: color 0.3s ease; /* Transição suave na cor */
+}
+
+/* Garante que o link 'active' não tenha uma cor inicial diferente */
+.navbar-dark .navbar-nav .nav-link.active {
+    /* Não definimos 'color' aqui, ele pega do '.nav-link' acima */
+}
+
+/* Estilo para links APENAS ao passar o mouse (HOVER) */
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #FFFFFF; /* Fica branco puro no hover */
+}
+
+/* Garante que o estado de foco (após clique ou navegação por teclado) volte à cor normal */
+.navbar-dark .navbar-nav .nav-link:focus {
+    color: rgba(255, 255, 255, 0.75); /* Volta para a cor padrão após o foco */
+    outline: none; /* Remove o contorno de foco do navegador (opcional) */
+}
