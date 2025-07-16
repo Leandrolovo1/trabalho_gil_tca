@@ -1,9 +1,11 @@
 // src/pages/Contato.jsx
 import React from 'react';
+import BotaoVoltar from '../components/BotaoVoltar/BotaoVoltar';
 
 export default function Contato() {
   return (
     <div className="container py-5">
+        <BotaoVoltar/>
       <h2 className="text-center mb-4">Fale Conosco</h2>
       <p className="text-center">Entre em contato para dúvidas, sugestões ou reservas.</p>
       <div className="row justify-content-center">

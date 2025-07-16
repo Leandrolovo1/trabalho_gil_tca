@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import MenuItem from "../itemCardapio/MenuItem";
+import BotaoVoltar from "../BotaoVoltar/BotaoVoltar";
 export default function MenuSection() {
   // eslint-disable-next-line no-unused-vars
-  const [produtos, setProdutos] = useState([{
+  const [produtos, setProdutos] = useState([
+    {
       id: 1,
       nome: "Hambúrguer Clássico",
       descricao:
@@ -32,10 +34,12 @@ export default function MenuSection() {
       descricao: "Refrigerante 350ml.",
       preco: 7.0,
       imagem: "https://placehold.co/300x200?text=Coca-Cola",
-    }]);
+    },
+  ]);
   return (
     <section className="container py-5">
       <h2 className="text-center mb-5">Nosso Cardápio Delicioso</h2>
+      <BotaoVoltar />
       <div className="row">
         {produtos.map((produto) => (
           <MenuItem

@@ -3,7 +3,6 @@ import React from "react";
 import MyCarousel from "../components/carrosel/MyCarousel"; // Ajuste o caminho se necessário
 import HeroSection from "../components/secaoPrincipal/HeroSection"; // Ajuste o caminho se necessário
 import Header from "../components/cabecalho/Header"; // Ajuste o caminho se necessário
-
 export default function Home() {
   return (
     <>

@@ -2,45 +2,65 @@
 import React from "react";
 // Importa os componentes Navbar, Container, Nav, Nav.Link e Button do React-Bootstrap
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
-// Importa o ícone de hambúrguer para o Toggler
+// Importa o useNavigate do react-router-dom
+import { useNavigate } from "react-router-dom";
 import {
   HouseDoor,
   CartFill,
   MenuButtonWide,
   Gift,
   TelephoneFill,
-} from "react-bootstrap-icons"; // Exemplo: se estivesse usando react-bootstrap-icons
+  List as ListIcon, // Adicione ListIcon se for usar no Navbar.Toggle
+} from "react-bootstrap-icons";
 
 export default function Header() {
+  const navigate = useNavigate();
+
+  // Renomeamos a função para 'handleNavLinkClick' e ela agora espera o 'path' diretamente
+  const handleNavLinkClick = (path) => {
+    navigate(path); // Navega para o caminho passado como argumento
+  };
+
   return (
-    // Usa o componente Navbar. O 'expand' e 'bg' são props do componente
     <Navbar expand="sm" variant="dark" bg="dark">
-      {/* Usa o componente Container */}
       <Container fluid>
-        <Navbar.Brand href="#">
-          <HouseDoor /> Meu Restaurante
+        {/*
+          Chamando handleNavLinkClick com o caminho '/'.
+          Lembre-se de envolver a chamada em uma função de seta () =>
+          para que ela só seja executada no clique, e não durante a renderização.
+        */}
+        <Navbar.Brand
+          onClick={() => handleNavLinkClick("/home")}
+          style={{ cursor: "pointer" }}
+        >
+          <HouseDoor className="me-2" /> Meu Restaurante
         </Navbar.Brand>
-        {/* Navbar.Toggle substitui o botão com data-bs-toggle. O 'aria-controls' é uma prop. */}
+
         <Navbar.Toggle aria-controls="responsive-navbar-nav">
           {/* Pode-se colocar um ícone aqui se não quiser o padrão do Bootstrap */}
-          {/* <ListIcon /> ou <span className="navbar-toggler-icon"></span> */}
+          {/* Use ListIcon aqui se importou */}
+          <ListIcon />
         </Navbar.Toggle>
-        {/* Navbar.Collapse substitui o div.collapse. O 'id' é uma prop. */}
+
         <Navbar.Collapse id="responsive-navbar-nav">
-          {/* O componente Nav substitui a ul. O 'ms-auto' (margin start auto) é uma classe Bootstrap comum. */}
           <Nav className="ms-auto">
-            {/* Nav.Link substitui li.nav-item e a.nav-link. 'active' e 'aria-current' são props. */}
-            <Nav.Link href="#" aria-current="page">
-              <MenuButtonWide /> Cardápio
+            {/*
+              Para cada Nav.Link, agora você passa o caminho da rota diretamente para handleNavLinkClick.
+              Mantenha o envolvimento em () => para evitar a execução imediata.
+              Removi o 'aria-current="page"' fixo aqui, pois ele é mais adequado para ser gerido
+              dinamicamente por um componente como NavLink ou logicamente com base na rota atual.
+            */}
+            <Nav.Link onClick={() => handleNavLinkClick("/cardapio")}>
+              <MenuButtonWide className="me-1" /> Cardápio
             </Nav.Link>
-            <Nav.Link href="#">
-              <Gift /> Promoções
+            <Nav.Link onClick={() => handleNavLinkClick("/promocoes")}>
+              <Gift className="me-1" /> Promoções
             </Nav.Link>
-            <Nav.Link href="#">
-              <TelephoneFill /> Contato
+            <Nav.Link onClick={() => handleNavLinkClick("/contato")}>
+              <TelephoneFill className="me-1" /> Contato
             </Nav.Link>
-            <Nav.Link href="#">
-              <CartFill /> Carrinho
+            <Nav.Link onClick={() => handleNavLinkClick("/carrinho")}>
+              <CartFill className="me-1" /> Carrinho
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

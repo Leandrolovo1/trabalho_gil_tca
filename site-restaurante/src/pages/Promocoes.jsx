@@ -1,9 +1,11 @@
 // src/pages/Promocoes.jsx
 import React from "react";
+import BotaoVoltar from "../components/BotaoVoltar/BotaoVoltar";
 
 export default function Promocoes() {
   return (
     <div className="container py-5">
+      <BotaoVoltar />
       <h2 className="text-center mb-4">Promoções Especiais!</h2>
       <p className="text-center">
         Fique de olho nas nossas ofertas imperdíveis!
