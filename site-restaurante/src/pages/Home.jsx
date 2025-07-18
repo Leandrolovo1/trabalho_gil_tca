@@ -6,7 +6,7 @@ import Header from "../components/cabecalho/Header"; // Ajuste o caminho se nece
 export default function Home() {
   return (
     <>
-      <Header />
+    
       <MyCarousel />
       <HeroSection />
       {/* Você pode adicionar outros elementos da sua página inicial aqui */}

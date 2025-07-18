@@ -1,19 +1,27 @@
 // src/pages/Carrinho.jsx
-import React from "react";
+import React from "react"; // Não precisamos mais do useState aqui
 import BotaoVoltar from "../components/BotaoVoltar/BotaoVoltar";
+import { useOutletContext } from "react-router-dom";
 
-export default function Carrinho({ carrinhoItems }) {
-  // Recebe os itens do carrinho como prop
+// Renomeado para CarrinhoPage para consistência
+export default function CarrinhoPage() {
+  const { carrinho } = useOutletContext(); // Recebe os itens do carrinho do contexto do App.jsx
+
+  // Calcula o total do carrinho
+  const totalCarrinho = carrinho.reduce((total, item) => total + item.preco, 0);
+
   return (
     <div className="container py-5">
-      <BotaoVoltar />
+      {/* O botão "Voltar" agora está no local certo dentro da div principal */}
+      <BotaoVoltar /> 
 
       <h2 className="text-center mb-4">Seu Carrinho de Pedidos</h2>
-      {carrinhoItems && carrinhoItems.length > 0 ? (
+      {/* Verifica se o carrinho existe e se tem itens */}
+      {carrinho && carrinho.length > 0 ? (
         <ul className="list-group">
-          {carrinhoItems.map((item, index) => (
+          {carrinho.map((item, index) => (
             <li
-              key={index}
+              key={index} // Usar 'index' como key é ok para listas estáticas, mas 'item.id' seria melhor se os itens tivessem um ID único e pudessem ser reordenados/removidos.
               className="list-group-item d-flex justify-content-between align-items-center"
             >
               {item.nome} - R$ {item.preco.toFixed(2).replace(".", ",")}
@@ -21,11 +29,8 @@ export default function Carrinho({ carrinhoItems }) {
             </li>
           ))}
           <li className="list-group-item active d-flex justify-content-between align-items-center mt-3">
-            <strong>Total:</strong> R${" "}
-            {carrinhoItems
-              .reduce((acc, item) => acc + item.preco, 0)
-              .toFixed(2)
-              .replace(".", ",")}
+            <strong>Total:</strong>{" "}
+            R$ {totalCarrinho.toFixed(2).replace(".", ",")} {/* Usamos a variável totalCarrinho que já calculamos */}
           </li>
         </ul>
       ) : (

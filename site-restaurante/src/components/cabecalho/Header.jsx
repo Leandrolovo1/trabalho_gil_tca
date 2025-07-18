@@ -22,7 +22,7 @@ export default function Header() {
   };
 
   return (
-    <Navbar expand="sm" variant="dark" bg="dark">
+    <Navbar expand="xl" variant="dark" bg="dark">
       <Container fluid>
         {/*
           Chamando handleNavLinkClick com o caminho '/'.
@@ -30,7 +30,7 @@ export default function Header() {
           para que ela só seja executada no clique, e não durante a renderização.
         */}
         <Navbar.Brand
-          onClick={() => handleNavLinkClick("/home")}
+          onClick={() => handleNavLinkClick("/")}
           style={{ cursor: "pointer" }}
         >
           <HouseDoor className="me-2" /> Meu Restaurante

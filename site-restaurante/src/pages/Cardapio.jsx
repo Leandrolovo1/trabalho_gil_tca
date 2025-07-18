@@ -1,10 +1,9 @@
-// src/pages/Carrinho.jsx
-import React from 'react';
-import HeroSection from '../components/secaoPrincipal/HeroSection';
-import MenuSection from '../components/secaoMenu/MenuSection';
+import React from "react";
+import MenuSection from "../components/secaoMenu/MenuSection";
+import { useOutletContext } from "react-router-dom";
 
-export default function Cardapio() { // Recebe os itens do carrinho como prop
-  return (
-    <MenuSection/>
-  );
+export default function Cardapio() {
+  const { adicionarAoCarrinho } = useOutletContext();
+  // Recebe os itens do carrinho como prop
+  return <MenuSection onAdicionarAoCarrinho={adicionarAoCarrinho} />;
 }

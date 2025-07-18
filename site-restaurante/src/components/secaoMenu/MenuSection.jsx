@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import MenuItem from "../itemCardapio/MenuItem";
 import BotaoVoltar from "../BotaoVoltar/BotaoVoltar";
-export default function MenuSection() {
+export default function MenuSection({ onAdicionarAoCarrinho }) {
   // eslint-disable-next-line no-unused-vars
   const [produtos, setProdutos] = useState([
     {
@@ -36,6 +36,7 @@ export default function MenuSection() {
       imagem: "https://placehold.co/300x200?text=Coca-Cola",
     },
   ]);
+
   return (
     <section className="container py-5">
       <h2 className="text-center mb-5">Nosso Cardápio Delicioso</h2>
@@ -44,10 +45,8 @@ export default function MenuSection() {
         {produtos.map((produto) => (
           <MenuItem
             key={produto.id} // Usamos o 'id' do produto como a 'key'
-            nome={produto.nome}
-            descricao={produto.descricao}
-            preco={produto.preco}
-            imagem={produto.imagem}
+            produto={produto}
+            onAdicionarAoCarrinho={onAdicionarAoCarrinho}
           />
         ))}
       </div>
