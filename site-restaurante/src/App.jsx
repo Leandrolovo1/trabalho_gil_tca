@@ -1,4 +1,3 @@
-// src/App.jsx
 
 import React, { useState } from "react"; // Importa o React
 import Header from "./components/cabecalho/Header";
@@ -20,15 +19,8 @@ function App() {
     <>
       <main>
         <Header />
-        {/*
-          O <Outlet> é onde o conteúdo da rota atual será renderizado.
-          Se você estiver na "/", o conteúdo de Home.jsx será renderizado aqui.
-          Se estiver em "/cardapio", o conteúdo de Cardapio.jsx será renderizado aqui.
-          E assim por diante.
-        */}
         <Outlet context={{ carrinho, adicionarAoCarrinho }} />
       </main>
-      {/* <Footer /> */} {/* Se você criar um Footer, ele viria aqui */}
     </>
   );
 }

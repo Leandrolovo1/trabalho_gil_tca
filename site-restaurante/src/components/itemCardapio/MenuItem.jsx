@@ -2,11 +2,7 @@ import React from "react";
 
 export default function MenuItem({ produto, onAdicionarAoCarrinho }) {
   const { nome, descricao, preco, imagem } = produto;
-
-  // Função que será chamada quando o botão "Adicionar ao Carrinho" for clicado
   const handleAdicionarClick = () => {
-    // Chama a função 'onAdicionarAoCarrinho' (que veio do App.jsx)
-    // e passa o 'produto' atual para ela.
     alert("Produto adicionado.");
     onAdicionarAoCarrinho(produto);
   };

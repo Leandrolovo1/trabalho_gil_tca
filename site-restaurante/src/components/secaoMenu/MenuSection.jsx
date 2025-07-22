@@ -10,7 +10,7 @@ export default function MenuSection({ onAdicionarAoCarrinho }) {
       descricao:
         "Pão brocha, Hambúrguer de 180g, queijo cheddar, alface, tomate e molho especial.",
       preco: 32.5,
-      imagem: "https://placehold.co/300x200?text=Hamburguer",
+      imagem: "https://placehold.co/300x200/brown/white?text=Hamburguer",
     },
     {
       id: 2,
@@ -18,7 +18,7 @@ export default function MenuSection({ onAdicionarAoCarrinho }) {
       descricao:
         "Molho de tomate fresco, mussarela de búfala, manjericão e azeite.",
       preco: 45.0,
-      imagem: "https://placehold.co/300x200?text=Pizza",
+      imagem: "https://placehold.co/300x200/red/white?text=Pizza",
     },
     {
       id: 3,
@@ -26,25 +26,25 @@ export default function MenuSection({ onAdicionarAoCarrinho }) {
       descricao:
         "Porção generosa de batatas fritas crocantes com tempero da casa.",
       preco: 18.9,
-      imagem: "https://placehold.co/300x200?text=Batata+Frita",
+      imagem: "https://placehold.co/300x200/orange/white?text=Batata+Frita",
     },
     {
       id: 4,
       nome: "Coca-Cola Lata",
       descricao: "Refrigerante 350ml.",
       preco: 7.0,
-      imagem: "https://placehold.co/300x200?text=Coca-Cola",
+      imagem: "https://placehold.co/300x200/saddlebrown/white?text=Coca-Cola",
     },
   ]);
 
   return (
     <section className="container py-5">
-      <h2 className="text-center mb-5">Nosso Cardápio Delicioso</h2>
       <BotaoVoltar />
+      <h2 className="text-center mb-5">Nosso Cardápio Delicioso</h2>
       <div className="row">
         {produtos.map((produto) => (
           <MenuItem
-            key={produto.id} // Usamos o 'id' do produto como a 'key'
+            key={produto.id} //o 'id' do produto como a 'key'
             produto={produto}
             onAdicionarAoCarrinho={onAdicionarAoCarrinho}
           />

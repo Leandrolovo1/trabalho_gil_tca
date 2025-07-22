@@ -1,17 +1,18 @@
-// src/pages/Home.jsx
+
 import React from "react";
-import MyCarousel from "../components/carrosel/MyCarousel"; // Ajuste o caminho se necessário
-import HeroSection from "../components/secaoPrincipal/HeroSection"; // Ajuste o caminho se necessário
-import Header from "../components/cabecalho/Header"; // Ajuste o caminho se necessário
+import MyCarousel from "../components/carrosel/MyCarousel"; 
+import HeroSection from "../components/secaoPrincipal/HeroSection"; 
 export default function Home() {
   return (
     <>
-    
       <MyCarousel />
+      <br />
       <HeroSection />
-      {/* Você pode adicionar outros elementos da sua página inicial aqui */}
       <p>Bem-vindo ao site do Restaurante!</p>
-      <p>Aqui você poderá ver o cardápio, fazer pedidos e muito mais.</p>
+      <p>
+        Aqui você poderá ver o cardápio, as promoções, os nossos contato e até
+        mesmo fazer seu pedido.
+      </p>
     </>
   );
 }

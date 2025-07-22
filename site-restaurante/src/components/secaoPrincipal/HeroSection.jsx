@@ -7,10 +7,6 @@ export default function HeroSection() {
     navigate("/cardapio");
   };
   return (
-    // Usa uma div com classes Bootstrap para espaçamento e alinhamento do texto
-    // 'py-5' adiciona padding (espaçamento interno) no topo e embaixo.
-    // 'text-center' centraliza o texto.
-    // 'bg-light' define um fundo claro para a seção.
     <div className="container-fluid py-5 bg-light">
       <div className="container">
         <h1 className="display-4 mb-3">Bem-vindo ao Nosso Restaurante!</h1>
@@ -21,7 +17,6 @@ export default function HeroSection() {
         </p>
         <button onClick={verCardapio} className="btn btn-primary btn-lg">
           Ver Cardápio <i className="bi bi-arrow-right"></i>{" "}
-          {/* Ícone de seta para a direita */}
         </button>
       </div>
     </div>

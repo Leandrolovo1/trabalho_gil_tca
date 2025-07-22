@@ -42,13 +42,6 @@
 .read-the-docs {
   color: #888;
 }
-
-/* --- */
-/* PERSONALIZAÇÃO DOS LINKS DA NAVBAR (Adicione a partir daqui) */
-/* --- */
-
-/* Estilo base para todos os links da navbar (incluindo o 'active' e 'focus' quando não em hover) */
-/* Isso garante que todos os links comecem com a mesma cor padrão e sobrescreve o padrão 'active' do Bootstrap */
 .navbar-dark .navbar-nav .nav-link {
   color: rgba(255, 255, 255, 0.75); /* Branco com 75% opacidade */
   transition: color 0.3s ease; /* Transição suave na cor */

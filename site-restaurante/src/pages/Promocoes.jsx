@@ -1,4 +1,4 @@
-// src/pages/Promocoes.jsx
+
 import React from "react";
 import BotaoVoltar from "../components/BotaoVoltar/BotaoVoltar";
 
@@ -10,9 +10,8 @@ export default function Promocoes() {
       <p className="text-center">
         Fique de olho nas nossas ofertas imperdíveis!
       </p>
-      {/* Adicione conteúdo real para promoções aqui */}
       <div className="row">
-        <div className="col-md-6 mb-4">
+        <div className="col-md-6 mb-4" style={{ minHeight: "200px" }}>
           <div className="card">
             <div className="card-body">
               <h5 className="card-title">Combo Família</h5>
@@ -22,7 +21,7 @@ export default function Promocoes() {
             </div>
           </div>
         </div>
-        <div className="col-md-6 mb-4">
+        <div className="col-md-6 mb-4" style={{ minHeight: "200px" }}>
           <div className="card">
             <div className="card-body">
               <h5 className="card-title">Sobremesa Grátis</h5>
